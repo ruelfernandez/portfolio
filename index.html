@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <img src="/img/IDPIC.jpeg" alt="Your Profile Picture" class="profile-img">
+            <div class="header-text">
+                <h1>Ruel S. Fernandez</h1>
+                <p>Web Developer | Tech Enthusiast</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I'm Ruel Fernandez, a passionate web developer. I love to build creative solutions and work on exciting projects. My goal is to create digital experiences that are both beautiful and functional.</p>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+<section id="activities" class="fade-in">
+    <div class="container">
+        <h2>My Activities</h2>
+        <div class="activities-grid">
+            <!-- Ordering System -->
+            <div class="activity-card" data-aos="fade-up">
+                <div class="activity-image" onclick="openModal('orderingSystemModal')">
+                    <img src="/img/Orderingpic.PNG" alt="Ordering System" class="activity-img">
+                </div>
+                <h3>Ordering System</h3>
+                <p>An ordering system is a way for customers to place orders for products or services, and for businesses to receive and process those orders.</p>
+            </div>
+
+            <!-- Payroll -->
+            <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="activity-image" onclick="openModal('payrollModal')">
+                <img src="img/Payrollpic.PNG" alt="Payroll Image 1" class="activity-img">
+                <img src="img/Payrollpic2.PNG" alt="Payroll Image 2" class="activity-img">
+            </div>
+            <h3>Payroll</h3>
+            <p>Payroll is the process of paying a company's employees and tracking their net income and deductions.</p>
+            </div>
+
+            <!-- Database Connection -->
+            <div class="activity-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="activity-image" onclick="openModal('dbConnectionModal')">
+                    <img src="images/database-connection-thumbnail.jpg" alt="Database Connection" class="activity-img">
+                </div>
+                <h3>Database Connection</h3>
+                <p>Database connection enables you to connect to a database, use stored data for login, and manage (create, read, update, delete) data records.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modals for Activities -->
+<!-- Ordering System Modal -->
+<div id="orderingSystemModal" class="activity-modal">
+    <span class="close-btn" onclick="closeModal('orderingSystemModal')">&times;</span>
+    <div class="modal-content">
+        <img src="/img/Orderingpic.PNG" alt="Ordering System" class="modal-img">
+    </div>
+</div>
+
+<!-- Payroll Modal -->
+<div id="payrollModal" class="activity-modal">
+    <span class="close-btn" onclick="closeModal('payrollModal')">&times;</span>
+    <div class="modal-content">
+        <img src="img/Payrollpic.PNG" alt="Payroll" class="modal-img">
+    </div>
+    <span class="close-btn" onclick="closeModal('payrollModal')">&times;</span>
+    <div class="modal-content">
+        <img src="img/Payrollpic2.PNG" alt="Payroll" class="modal-img">
+    </div>
+</div>
+
+<!-- Database Connection Modal -->
+<div id="dbConnectionModal" class="activity-modal">
+    <span class="close-btn" onclick="closeModal('dbConnectionModal')">&times;</span>
+    <div class="modal-content">
+        <img src="images/database-connection-large.jpg" alt="Database Connection" class="modal-img">
+    </div>
+</div>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2>My Resume</h2>
+            <p>Download my resume or view my skills and experience below:</p>
+            <a href="/img/Fernandez-Resume.pdf" download="My_Resume" class="btn">Download Resume</a>
+            <div class="resume-details">
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </section>  
+
+    <script>
+        // Open Modal Function
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+    
+        // Close Modal Function
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+    
+        // Close modal if clicked outside of it
+        window.onclick = function(event) {
+            var modals = document.querySelectorAll('.activity-modal');
+            modals.forEach(function(modal) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>You can reach me at:</p>
+            <ul>
+                <li>Email: fernandez.ruel.serafino@gmailcom</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">linkedin.com/in/RuelFernandez</a></li>
+                <li>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/RuelFernandez</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+</body>
+</html>
